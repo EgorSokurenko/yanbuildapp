@@ -747,8 +747,8 @@ body {
   background: color(display-p3 0.9373 0.5412 0.1294);
   margin-top: -80px;
 }
-
 /* MOBILE-GALLERY */
+
 
 /* DESKTOP-GALLERY */
 
@@ -934,6 +934,13 @@ body {
     margin-left: 188px;
   }
 }
+
+@media screen and (min-width: 393px) and (max-width: 800px) {
+    .project-gallery-section {
+        display: none;
+    }
+}
+
 
 /* SERVICES WE PROVIDE */
 
