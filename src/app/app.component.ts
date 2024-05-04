@@ -7,8 +7,8 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-   isMobile: boolean;
-   isOpen: boolean = false; 
+  isMobile: boolean;
+  isOpen: boolean = false;
 
   constructor() {
     this.checkScreenSize();
@@ -17,9 +17,9 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.checkScreenSize();
-   }
-   
-   @HostListener('window:scroll', ['$event'])
+  }
+
+  @HostListener('window:scroll', ['$event'])
   onScroll(event) {
     if (window.scrollX > 0) { 
       this.isOpen = false;
@@ -28,9 +28,17 @@ export class AppComponent {
 
   checkScreenSize() {
     this.isMobile = window.innerWidth < 800;
-   }
-   
- openMenu() {
+  }
+
+  openMenu() {
     this.isOpen = !this.isOpen;
+  }
+
+  closeMenu(blockId: string) {
+    this.isOpen = false;
+    const element = document.getElementById(blockId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

@@ -1159,9 +1159,6 @@ body {
 @media screen and (min-width: 393px) and (max-width: 799px) {
   .services-we-provide-section {
     margin-top: 86px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .services-we-provide {
     padding: 0 16px;
