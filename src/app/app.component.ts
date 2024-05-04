@@ -20,6 +20,11 @@ export class AppComponent {
    }
    
    @HostListener('window:scroll', ['$event'])
+  onScroll(event) {
+    if (window.scrollX > 0) { 
+      this.isOpen = false;
+    }
+  }
 
   checkScreenSize() {
     this.isMobile = window.innerWidth < 800;
